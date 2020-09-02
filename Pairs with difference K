@@ -1,0 +1,41 @@
+#include<unordered_map>
+void printPairs(int *input, int n, int k) {
+	// Write your code here
+unordered_map<int,int> map;
+for(int i=0;i<n;i++)
+{
+    if(map.count(input[i])==0)
+    {map[input[i]]=1;}
+    else
+    {map[input[i]]++;}
+}
+    //cout<<map[input[1]]<<endl;
+    for( int i=0;i<n;i++)
+    {int p=k+input[i];
+     int n=input[i]-k;
+     if(map.count(p)>0)
+     {
+         int h=map[p]*map[input[i]];
+         while(h!=0)
+         {cout<<min(input[i],p)<<" "<<max(input[i],p)<<endl;
+         h--;}
+         //map.erase(input[i]);->yha erase ni karna, neeche karna hai..
+          //map.erase(p)    ;
+     }
+     if(map.count(n)>0)
+     {//cout<<"enter"<<endl;
+         //cout<<map[input[0]]<<":"<<endl;
+         int h=map[n]*map[input[i]];//not h=map.count(p)*map.count[input[i]]
+     //cout<<h<<endl;
+         while(h!=0)
+         {cout<<min(input[i],n)<<" "<<max(input[i],n)<<endl;
+         h--;}
+           //map.erase(input[i]);
+        // map.erase(p)    ;
+       
+     }
+     map.erase(input[i]);
+        
+    }
+}
+
