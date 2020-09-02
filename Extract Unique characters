@@ -1,0 +1,20 @@
+#include<unordered_map>
+#include <cstring>
+
+char* uniqueChar(char *str){
+    // Write your code here
+    char *output=new char[strlen(str)];//intilization problem not ->char output[1000]
+    int k=0;
+unordered_map<char,int> map;
+    for(int i=0;i<strlen(str);i++)
+    {
+        if(map.count(str[i])>0)
+        {continue;}
+        else
+        {map[str[i]]=1;
+        output[k]=str[i];
+        k++;}
+        
+    }
+    return output;
+}
