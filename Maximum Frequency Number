@@ -1,0 +1,28 @@
+#include<unordered_map>	
+	int highestFrequency(int *input, int n){	 
+		
+	/* Don't write main().
+     	* the input array is already passed as function argument.
+     	* Taking input and printing output is handled automatically.
+     	*/
+     	
+ unordered_map<int,int>m;
+        for(int i=0;i<n;i++)
+        {
+            int key=input[i];
+            if(m.count(key)==0)
+            {m[key]==1;}
+            else
+            {m[key]++;}
+            
+        }
+     	int max=m[input[0]];
+        int ans=input[0];
+        for(int i=1;i<n;i++)
+        {
+            if(max<m[input[i]])
+            {max=m[input[i]];            //but greatest kese ayega 
+            ans=input[i];}
+        }
+        return ans;
+ 	}
